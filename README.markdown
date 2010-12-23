@@ -46,7 +46,7 @@ whereas search might look like
       section:  "Search"
     }
     
-The actual json was much more complicated, containing about 20 keys. Writing the mapping between input and output in higml allowed my coworkers and I to quickly understand what the json would be for a given page, or why the json was the way it was. Example .higml files can be found in /examples.
+The actual json was much more complicated, containing about 20 keys. Writing the mapping between input and output in separate higml files (one for each Rails controller) allowed my coworkers and I to quickly understand what the json would be for a given page, or why the json was the way it was. Example .higml files can be found in /examples.
 
 Syntax
 ------
