@@ -60,6 +60,8 @@ Example:
       filter
         :filter_terms= filter_terms
 
+.
+
 <dl>
   <dt>@import appication.higml</dt>
   <dd>acts as if the contents of application.higml were located where @import is</dd>
