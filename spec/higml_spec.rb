@@ -16,7 +16,7 @@ describe "HIGML integration" do
     values.should == {
       :channel      => "Search",
       :pageName     => "Search Results",
-      :keywords     => priority_map[:keywords],
+      :keywords     => priority_map[:keywords], # takes priority over @mapper_context.keywords
       :filter_terms => @mapper_context.filter_terms
     }
   end

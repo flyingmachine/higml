@@ -30,9 +30,9 @@ module Higml
       node_values.each do |value|
         next if priority_keys.include? value.key
         if value.static?
-          @result[value.key] = value.pre_value
+          @result[value.key] = value.raw_value
         else
-          @result[value.key] = @mapper_context.instance_eval(value.pre_value)
+          @result[value.key] = @mapper_context.instance_eval(value.raw_value)
         end
       end
     end
