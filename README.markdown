@@ -64,32 +64,20 @@ Example:
       filter
         :filter_terms= filter_terms
 
-<table>
-  <tr>
-    <td>@import appication.higml</dt>
-    <td>acts as if the contents of application.higml were located where @import is</dd>
-  </tr>
-  <tr>
-    <td>action:show, action:new</dt>
-    <td>If the input hash has a value of "show" _or_ "new" for the key :action, then use the mapping that follows</dd>
-  </tr>
-  <tr>
-    <td>:pageName Search Results</dt>
-    <td>Output hash has a value of "Search Results" for the :pageName key; constant string</dd>
-  </tr>
-  <tr>
-    <td>:keywords= keywords</dt>
-    <td>Value of :keywords in output hash is whatever "keywords" evaluates to in the Higml mapper_context; let's you have dynamic values</dd>
-  </tr>
-  <tr>
-    <td>q:rutabagas</dt>
-    <td>If input hash satisfies action:show _or_ action:new, _and_ it has a value of "rutabagas" for :q, then apply the mapping that follows</dd>
-  </tr>
-  <tr>
-    <td>filter</dt>
-    <td>If input hash has a key of :filter at all (regardless of :q but dependent on :action), then apply mapping that follows</dd>
-  </tr>
-</table>
+<dl>
+  <dt>@import appication.higml</dt>
+  <dd>acts as if the contents of application.higml were located where @import is</dd>
+  <dt>action:show, action:new</dt>
+  <dd>If the input hash has a value of "show" _or_ "new" for the key :action, then use the mapping that follows</dd>
+  <dt>:pageName Search Results</dt>
+  <dd>Output hash has a value of "Search Results" for the :pageName key; constant string</dd>
+  <dt>:keywords= keywords</dt>
+  <dd>Value of :keywords in output hash is whatever "keywords" evaluates to in the Higml mapper_context; let's you have dynamic values</dd>
+  <dt>q:rutabagas</dt>
+  <dd>If input hash satisfies action:show _or_ action:new, _and_ it has a value of "rutabagas" for :q, then apply the mapping that follows</dd>
+  <dt>filter</dt>
+  <dd>If input hash has a key of :filter at all (regardless of :q but dependent on :action), then apply mapping that follows</dd>
+</dl>
 
 Contributing to higml
 ---------------------
