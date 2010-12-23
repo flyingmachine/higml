@@ -1,12 +1,22 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'rspec'
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'higml'
+require 'spec'
+require 'spec/autorun'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+FIXTURE_DIRECTORY = File.join(File.dirname(__FILE__), 'fixtures')
+Higml.config.higml_directory = FIXTURE_DIRECTORY
 
-RSpec.configure do |config|
-  
+Spec::Runner.configure do |config|
+end
+
+
+class Context
+  def keywords
+    "juice mirror"
+  end
+  def filter_terms
+    "cat shakespeare"
+  end
 end
