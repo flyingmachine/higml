@@ -1,6 +1,8 @@
-= higml
+higml
+=====
 
-== Overview
+Overview
+--------
 
 Higml is a terse format for converting an input hash to an output hash.
 
@@ -46,7 +48,9 @@ whereas search might look like
     
 The actual json was much more complicated, containing about 20 keys. Writing the mapping between input and output in higml allowed my coworkers and I to quickly understand what the json would be for a given page, or why the json was the way it was. Example .higml files can be found in /examples.
 
-== Syntax
+Syntax
+------
+
 Example:
 
     @import application.higml
@@ -60,24 +64,35 @@ Example:
       filter
         :filter_terms= filter_terms
 
-.
+<table>
+  <tr>
+    <td>@import appication.higml</dt>
+    <td>acts as if the contents of application.higml were located where @import is</dd>
+  </tr>
+  <tr>
+    <td>action:show, action:new</dt>
+    <td>If the input hash has a value of "show" _or_ "new" for the key :action, then use the mapping that follows</dd>
+  </tr>
+  <tr>
+    <td>:pageName Search Results</dt>
+    <td>Output hash has a value of "Search Results" for the :pageName key; constant string</dd>
+  </tr>
+  <tr>
+    <td>:keywords= keywords</dt>
+    <td>Value of :keywords in output hash is whatever "keywords" evaluates to in the Higml mapper_context; let's you have dynamic values</dd>
+  </tr>
+  <tr>
+    <td>q:rutabagas</dt>
+    <td>If input hash satisfies action:show _or_ action:new, _and_ it has a value of "rutabagas" for :q, then apply the mapping that follows</dd>
+  </tr>
+  <tr>
+    <td>filter</dt>
+    <td>If input hash has a key of :filter at all (regardless of :q but dependent on :action), then apply mapping that follows</dd>
+  </tr>
+</table>
 
-<dl>
-  <dt>@import appication.higml</dt>
-  <dd>acts as if the contents of application.higml were located where @import is</dd>
-  <dt>action:show, action:new</dt>
-  <dd>If the input hash has a value of "show" _or_ "new" for the key :action, then use the mapping that follows</dd>
-  <dt>:pageName Search Results</dt>
-  <dd>Output hash has a value of "Search Results" for the :pageName key; constant string</dd>
-  <dt>:keywords= keywords</dt>
-  <dd>Value of :keywords in output hash is whatever "keywords" evaluates to in the Higml mapper_context; let's you have dynamic values</dd>
-  <dt>q:rutabagas</dt>
-  <dd>If input hash satisfies action:show _or_ action:new, _and_ it has a value of "rutabagas" for :q, then apply the mapping that follows</dd>
-  <dt>filter</dt>
-  <dd>If input hash has a key of :filter at all (regardless of :q but dependent on :action), then apply mapping that follows</dd>
-</dl>
-
-== Contributing to higml
+Contributing to higml
+---------------------
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -87,7 +102,8 @@ Example:
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+Copyright
+---------
 
 Copyright (c) 2010 Daniel Higginbotham. See LICENSE.txt for
 further details.
