@@ -4,7 +4,7 @@ higml
 Overview
 --------
 
-Higml is a terse format for "cascading configuration" - it uses cascading rules to create an output hash from an input hash.
+Higml is a concise format for "cascading configuration" - it uses cascading rules to create an output hash from an input hash.
 
 Example Higml and input:
 
