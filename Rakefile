@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "higml"
   gem.homepage = "http://github.com/flyingmachine/higml"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Higml is a terse format for converting an input hash to an output hash.}
+  gem.description = %Q{Higml is a terse format for converting a static input hash to a dynamic output hash.}
   gem.email = "daniel@flyingmachinestudios.com"
   gem.authors = ["Daniel Higginbotham"]
 end
