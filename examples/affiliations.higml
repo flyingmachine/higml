@@ -1,0 +1,4 @@
+@import application.higml
+
+action:index
+  :pageName ManagePermissions

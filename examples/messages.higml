@@ -1,0 +1,9 @@
+@import application.higml
+
+:channel Messages
+
+action:index
+  :pageName List Messages
+
+action:show
+  :pageName= "Message #{@message.id}"

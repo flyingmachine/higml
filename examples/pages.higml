@@ -1,0 +1,9 @@
+@import application.higml
+
+id:privacy_policy
+  :channel PrivacyPolicy
+  :pageName PrivacyPolicy
+
+id:terms_of_use
+  :channel TermsOfUse
+  :pageName TermsOfUse

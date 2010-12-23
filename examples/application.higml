@@ -1,0 +1,18 @@
+:charSet UTF-8
+:currencyCode USD
+:linkLeaveQueryString= false
+:linkTrackVars None
+:linkTrackEvents None
+
+:trackDownloadLinks= true
+:trackExternalLinks= true
+:trackInlineStats= true
+:linkDownloadFileTypes zip,wav,mp3,mov,mpg,avi,doc,pdf,xls,ppt
+:linkInternalFilters= "javascript:,#{request.host}"
+
+:pidx= current_user.id
+:skill_level= current_user_type
+:site_name My Site
+:session_id= request.session_options[:id]
+:timestamp= Time.now.strftime("%Y/%m/%d %H:%M:%S %p")
+:country= current_user_country

@@ -1,0 +1,17 @@
+@import application.higml
+
+action:show
+  :channel Profile_PersonalInformation
+  :pageName= "Profile_PersonalInformation #{@member.id}"
+
+  viewing_own
+    :channel MyProfile_PersonalInformation
+    :pageName= "MyProfile_PersonalInformation #{@member.id}"
+
+action:edit
+  :channel MyProfile_Edit
+  :pageName= "MyProfile_Edit #{@member.id}"
+
+action:edit_preferences
+  :channel ManageSetting
+  :pageName= "ManageSetting #{current_user.id}"

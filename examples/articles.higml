@@ -1,0 +1,4 @@
+@import application.higml
+
+action:show
+  :pageName= @article.title

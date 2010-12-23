@@ -1,0 +1,4 @@
+@import application.higml
+
+:channel SimulateScenarios
+:pageName SimulateScenarios

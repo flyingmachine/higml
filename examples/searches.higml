@@ -1,0 +1,35 @@
+@import application.higml
+
+action:show, action:new
+  :channel Search
+  :search_term= @parser.keywords
+  :search_count= total_search_results
+  :search_resource_type= @parser.search_type
+  :search_fields= omniture_search_fields
+
+  action:show
+    :pageName= "Saved Search #{params[:id]}"
+    :search_type saved
+
+  action:new
+    :pageName New Search
+
+    search_type
+      :pageName Performed Search
+      :search_type= omniture_search_type
+
+      filter
+        :filter_type= filter_types
+        :filter_term= filter_terms
+        :search_type filtered
+
+action:create
+  :channel Search Saved
+  :pageName= "Search Saved #{@search.id}"
+
+action:destroy
+  :channel Search Deleted
+  :pageName= "Search Deleted #{@search.id}"
+
+search_origin
+  :search_origin= params[:search_origin]
