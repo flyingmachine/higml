@@ -79,6 +79,19 @@ Example:
   <dd>If input hash has a key of :filter at all (regardless of :q but dependent on :action), then apply mapping that follows</dd>
 </dl>
 
+Config
+------
+Use Higml.config.x to set these
+
+<dl>
+  <dt>config_directory</dt>
+  <dd>Where higml-config.yml is stored #this may be overkill :(</dd>
+  <dt>higml_directory</dt>
+  <dd>Where all the .higml files are stored</dd>
+  <dt>global_pairs</dt>
+  <dd>should be hash; used as base hash that result of mapping is merged on to</dd>
+</dl>
+
 Contributing to higml
 ---------------------
  
