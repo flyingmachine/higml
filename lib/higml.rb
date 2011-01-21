@@ -8,9 +8,9 @@ require 'higml/value'
 
 module Higml
   class << self
-    def values_for(input, selector_config, priority_map, mapper_context)
+    def values_for(input, selector_config, mapper_context = nil, priority_map = {})
       tree = tree_for_selector_config(selector_config)      
-      Higml::Applier.new(input, tree, priority_map, mapper_context).result
+      Higml::Applier.new(input, tree, mapper_context, priority_map).result
     end
     
     def tree_for_selector_config(selector_config)

@@ -1,6 +1,6 @@
 module Higml
   class Applier
-    def initialize(input, tree, priority_map, mapper_context)
+    def initialize(input, tree, mapper_context = nil, priority_map = {})
       @input = input
       @tree = tree
       @mapper_context = mapper_context
@@ -31,6 +31,8 @@ module Higml
         next if priority_keys.include? value.key
         if value.static?
           @result[value.key] = value.raw_value
+        elsif @mapper_context.nil?
+          raise ArgumentError, "you're trying to evaluate code without providing a context"
         else
           @result[value.key] = @mapper_context.instance_eval(value.raw_value)
         end

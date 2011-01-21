@@ -11,7 +11,7 @@ describe "HIGML integration" do
   
   it "should return the final values using input, higml filename, priority values" do
     priority_map = {:keywords => "tongue paper"}
-    values = Higml.values_for(@input, 'search.higml', priority_map, @mapper_context)
+    values = Higml.values_for(@input, 'search.higml', @mapper_context, priority_map)
     
     values.should == {
       :channel      => "Search",
@@ -23,7 +23,7 @@ describe "HIGML integration" do
 
   it "should allow you to use an existing tree instead of an sc filename" do
     tree = Higml::Parser.new(File.read(File.join(Higml.config.higml_directory, 'search.higml'))).to_tree
-    values = Higml.values_for(@input, tree, {}, @mapper_context)
+    values = Higml.values_for(@input, tree, @mapper_context)
 
     values.should == {
       :channel      => "Search",
@@ -31,5 +31,13 @@ describe "HIGML integration" do
       :keywords     => @mapper_context.keywords,
       :filter_terms => @mapper_context.filter_terms
     }
+  end
+  
+  it "should work ok without mapper context or priority map" do
+    lambda{Higml.values_for({:action => "new"}, 'search.higml')}.should_not raise_error
+  end
+  
+  it "should raise an error if applying a rule which requires a context, where none is provided" do
+    lambda{Higml.values_for({:action => "show", :keywords => "what"}, 'search.higml')}.should raise_error
   end
 end

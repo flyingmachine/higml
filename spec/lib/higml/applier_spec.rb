@@ -12,7 +12,7 @@ describe "Higml::Applier" do
     priority_map = {:keywords => "tongue paper"}
     mapper_context = Context.new
     
-    values = Higml::Applier.new(input, tree, priority_map, mapper_context).result
+    values = Higml::Applier.new(input, tree, mapper_context, priority_map).result
     
     values.should == {
       :channel => "Search",
@@ -38,7 +38,7 @@ describe "Higml::Applier" do
     priority_map = {}
     
     mapper_context = Context.new
-    Higml::Applier.new(input_group_1, tree, priority_map, mapper_context).result.should == {:filter => "filtered!"}
-    Higml::Applier.new(input_group_2, tree, priority_map, mapper_context).result.should == {:filter => "filtered!"}
+    Higml::Applier.new(input_group_1, tree, mapper_context, priority_map).result.should == {:filter => "filtered!"}
+    Higml::Applier.new(input_group_2, tree, mapper_context, priority_map).result.should == {:filter => "filtered!"}
   end
 end
