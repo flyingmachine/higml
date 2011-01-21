@@ -4,7 +4,7 @@ higml
 Overview
 --------
 
-Higml is a terse format for "cascading configuration" - it uses cascading rules to create an output hash from an input hash.
+Higml is a concise format for "cascading configuration" - it uses cascading rules to create an output hash from an input hash.
 
 Example Higml and input:
 
@@ -30,7 +30,7 @@ This output is produced:
       :filter_terms => ... #depends on value of "filter_terms" method in given context
     }
 
-To get a better understand of _what_ Higml does, go through spec/higml_spec.rb and the corresponding .higml files in spec/fixtures.
+To get a better understandung of _what_ Higml does, go through spec/higml_spec.rb and the corresponding .higml files in spec/fixtures.
 
 Why would you want to use it? The original use case was generating a json object for analytics. The json object had different fields and values depending on what section of the site and individual page were being viewed. When viewing a profile, the json might be
 
