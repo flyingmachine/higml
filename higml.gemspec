@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{higml}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Daniel Higginbotham"]
-  s.date = %q{2010-12-23}
+  s.date = %q{2011-06-09}
   s.description = %q{Higml is a terse format for converting a static input hash to a dynamic output hash.}
   s.email = %q{daniel@flyingmachinestudios.com}
   s.extra_rdoc_files = [
