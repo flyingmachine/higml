@@ -83,9 +83,9 @@ module Higml
       
       def type
         case @stripped_source[0]
-        when VALUE_INDICATOR: :value
-        when IMPORT_INDICATOR: :import
-        when COMMENT_INDICATOR: :comment
+        when VALUE_INDICATOR then :value
+        when IMPORT_INDICATOR then :import
+        when COMMENT_INDICATOR then :comment
         else
           :selector
         end
