@@ -41,7 +41,7 @@ module Higml
         when :value
           # TODO move this comment
           # Every drop in indentation corresponds to a new node;
-          # It doesn't make sense to drop indentation level and 
+          # It doesn't make sense to drop indentation level and
           # define further values
           current_node.values << line.to_value
         when :selector
@@ -82,7 +82,7 @@ module Higml
       end
       
       def type
-        case @stripped_source[0]
+        case @stripped_source[0].class == String ? @stripped_source[0].ord : @stripped_source[0]
         when VALUE_INDICATOR then :value
         when IMPORT_INDICATOR then :import
         when COMMENT_INDICATOR then :comment
